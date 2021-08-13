@@ -10,8 +10,7 @@ router.get("/", (req, res) => {
           'post_url',
           'title',
           'created_at'
-       
-        ],
+        ], 
         include: [
           // include the Comment model here:
           {
