@@ -3,38 +3,38 @@ const router = require('express').Router();
 const { Post, User, Comment } = require('../models');
 
 router.get('/', (req, res) => {
-    Post.findAll({
-      attributes: [
-        'id',
-        'post_url',
-        'title',
-        'created_at',
-      ],
-      include: [
-        {
-          model: Comment,
-          attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-          include: {
-            model: User,
-            attributes: ['username']
-          }
-        },
-        {
+  Post.findAll({
+    attributes: [
+      'id',
+      'post_url',
+      'title',
+      'created_at'
+    ],
+    include: [
+      {
+        model: Comment,
+        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        include: {
           model: User,
           attributes: ['username']
         }
-      ]
-    })
-      .then(dbPostData => {
-        console.log(dbPostData[0]);
-       
-        // pass a single post object into the homepage template
-        const posts = dbPostData.map(post => post.get({ plain: true }));
+      },
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
+  })
+    .then(dbPostData => {
+      const posts = dbPostData.map(post => post.get({ plain: true }));
 
-      })
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-      });
-  });
+      // pass a single post object into the homepage template
+      res.render('homepage', { posts });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 module.exports = router;
