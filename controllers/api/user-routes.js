@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const withAuth = require("../utils/auth");
+const withAuth = require("../../utils/auth");
 const { User, Post, Comment } = require("../../models");
 
 // GET /api/users
@@ -50,7 +50,7 @@ router.get("/:id", (req, res) => {
     });
 });
 // POST /api/users
-router.post("/",  withAuth,(req, res) => {
+router.post("/", (req, res) => {
   // expects {username: 'erikam29', password: 'password1234'}
   User.create({
     username: req.body.username,
@@ -67,39 +67,43 @@ router.post("/",  withAuth,(req, res) => {
 });
 
 // POST /api/users/login
-router.post("/login", withAuth, (req, res) => {
+router.post("/login", (req, res) => {
   User.findOne({
     where: {
       username: req.body.username,
     },
-  }).then((dbUserData) => {
-    if (!dbUserData) {
-      res.status(400).json({ message: "No user with that username!" });
-      return;
-    }
-    const validPassword = dbUserData.checkPassword(req.body.password);
-    if (!validPassword) {
-      res.status(400).json({ message: "Incorrect password!" });
-      return;
-    }
-    req.session.save(() => {
-      // declare session variables
-      req.session.user_id = dbUserData.id;
-      req.session.username = dbUserData.username;
-      req.session.loggedIn = true;
+  })
+    .then((dbUserData) => {
+      console.log(dbUserData);
+      if (!dbUserData) {
+        res.status(400).json({ message: "No user with that username!" });
+        return;
+      }
+      const validPassword = dbUserData.checkPassword(req.body.password);
+      if (!validPassword) {
+        res.status(400).json({ message: "Incorrect password!" });
+        return;
+      }
+      req.session.save(() => {
+        // declare session variables
+        req.session.user_id = dbUserData.id;
+        req.session.username = dbUserData.username;
+        req.session.loggedIn = true;
 
-      res.json({ user: dbUserData, message: 'You are now logged in!' });
+        res.json({ user: dbUserData, message: "You are now logged in!" });
+      });
+    })
+    .catch((e) => {
+      console.log(e);
     });
-  });
 });
 
-router.post('/logout', withAuth, (req, res) => {
+router.post("/logout", withAuth, (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
     });
-  }
-  else {
+  } else {
     res.status(404).end();
   }
 });

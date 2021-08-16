@@ -21,14 +21,26 @@
     font-size: 16px;
   }
   
-  
+nav {
+  margin: 0;
+    color: blue;
+}
  a {
     font-weight: 700;
     margin: 0;
-    color: var(--dark);
+    color: red;
     line-height: 1.25;
   }
-  
+
+  h1 {
+    font-size: 3rem;
+    background-color: var(--primary);
+    color: var(--dark);
+    padding: 0 10px;
+    display: inline-block;
+    border-radius: var(--border-radius);
+    box-shadow: 6px 5px var(--light-dark);
+  }
   main {
     margin: 20px auto;
     width: 94%;
@@ -132,33 +144,34 @@
     background-color: rgba(255,255,255, 1);
     border-radius: var(--border-radius);
   }
-  
+
+/*   
   .icon-danger {
     color: rgb(255, 70, 70);
   }
   
   .icon-success {
     color: rgb(29, 153, 255);
-  }
+  } */
   
   /* CARDS */
-  .card {
+  /* .card {
     margin: 0 0 20px 0;
     border: 3px solid var(--dark);
     border-radius: var(--border-radius);
-  }
+  } */
   
-  .card-header {
+  header {
     color: var(--primary);
     background-color: var(--dark);
     padding: 2.5%;
     border-radius: calc(.18rem - 1px) calc(.18rem - 1px) 0 0;
   }
   
-  .card-body {
+  /* .card-body {
     padding: 2.5%;
   }
-  
+   */
   /* FORM */
   .form-label,
   .form-input,
