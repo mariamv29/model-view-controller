@@ -5,7 +5,6 @@ async function loginFormHandler(event) {
   const password = document.querySelector("#password-login").value.trim();
 
   if (username && password) {
-    console.log({username, password})
     const response = await fetch("/api/users/login", {
       method: "post",
       body: JSON.stringify({
@@ -39,9 +38,8 @@ async function signupFormHandler(event) {
       headers: { "Content-Type": "application/json" },
     });
 
-    // check the response status
     if (response.ok) {
-      console.log("success");
+      document.location.replace("/dashboard/");
     } else {
       alert(response.statusText);
     }
@@ -49,8 +47,9 @@ async function signupFormHandler(event) {
 }
 
 document
-  .querySelector(".login-btn")
-  .addEventListener("click", loginFormHandler);
+  .querySelector(".login-form")
+  .addEventListener("submit", loginFormHandler);
+
 document
   .querySelector(".signup-form")
   .addEventListener("submit", signupFormHandler);
