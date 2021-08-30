@@ -10,10 +10,10 @@
   <body>
     <div class="wrapper">
       <header>
-        <a href="/"> Home</a>
-        <nav>
-          {{#if loggedIn}}
 
+        <nav>
+          <a href="/"> Home</a>
+          {{#if loggedIn}}
             <a href="/dashboard">Dashboard</a>
             <button id="logout" class="btn-no-style">Logout</button>
           {{else}}
@@ -22,13 +22,14 @@
         </nav>
 
         <h1>
-          The Tech Blog
+          <a href="/" class="tech">  The Tech Blog</a>
         </h1>
 
       </header>
       <main>
         {{{body}}}
       </main>
+
       <footer>
         Thanks for visiting!
       </footer>
