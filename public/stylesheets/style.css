@@ -1,10 +1,9 @@
 :root {
   --primary: #ccdad1;
-  --secondary: #9caea9;
   --tertiary: #788585;
   --light-dark: #6f6866;
   --dark: #271510;
-  --border-radius: 0.3rem;
+  --border-radius: .3rem;
 }
 
 * {
@@ -12,44 +11,21 @@
 }
 
 body {
-  background-color: var(--primary);
   margin: 0;
   padding: 0;
+  background-color: var(--primary);
   font-family: "IBM Plex Sans", sans-serif;
   color: var(--dark);
   line-height: 1.5;
   font-size: 16px;
 }
 
-header {
+.hero {
+  display: block;
   background-color: var(--dark);
-  padding: 1.5%;
-  border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
+  padding: 3% 4%;
+ 
 }
-
-a {
-  font-weight: 700;
-  margin: 0;
-  line-height: 1.25;
-}
-
-header nav a {
-  color: var(--primary);
-  font-weight: lighter;
-  padding: 15px 15px;
- text-decoration: none;
-}
-
-#logout{
-  border: none;
-  background: none;
-  color: var(--primary);
-  font-weight: lighter;
-  padding: 15px 15px;
-  font-family: "IBM Plex Sans", sans-serif;
-  font-size: 16px; 
-}
-
 .tech {
   text-decoration: none;
   font-size: 3rem;
@@ -59,6 +35,29 @@ header nav a {
   display: inline-block;
   border-radius: var(--border-radius);
   box-shadow: 6px 5px var(--light-dark);
+
+}
+a {
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.25;
+}
+
+header nav a {
+  color: var(--primary);
+  font-weight: lighter;
+  padding: 15px 25px;
+  text-decoration: none;
+}
+
+#logout {
+  border: none;
+  background: none;
+  color: var(--primary);
+  font-weight: lighter;
+  padding: 15px 15px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 16px;
   text-decoration: none;
 }
 main {
@@ -66,29 +65,33 @@ main {
   width: 94%;
 }
 
-#logout {
-  text-decoration: none;
-}
-
-
 
 /* CARDS */
+/* .card {
+  margin: 0 0 20px 0;
+  border: 3px solid var(--dark);
+  border-radius: var(--border-radius);
+} */
 
- article {
-    margin: 0 0 20px 0;
-    border: 3px solid var(--dark);
-    border-radius: var(--border-radius);
-  }  
 
-  .title {
-    color: var(--secondary);
-    background-color: var(--dark);
-  }
+article,
+.login-form {
+  margin: 0 20px;
+  border: 3px solid var(--dark);
+}
+
+.title,
+.meta,
+.login-header {
+  flex-wrap: wrap;
+  padding: 0.5%;
+  color: var(--primary);
+  background-color: var(--dark);
+}
+
 .title a {
   color: var(--secondary);
 }
-
-
 
 /* FLEX CONTENT */
 .flex-row {
@@ -128,8 +131,6 @@ main {
 
 /* col-md */
 @media screen and (min-width: 768px) {
-
-   
 }
 
 /* col-lg */
@@ -138,5 +139,4 @@ main {
 
 /* col-xl */
 @media screen and (min-width: 1200px) {
-
 }
