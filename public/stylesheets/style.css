@@ -3,7 +3,7 @@
   --tertiary: #788585;
   --light-dark: #6f6866;
   --dark: #271510;
-  --border-radius: .3rem;
+  --border-radius: 0.3rem;
 }
 
 * {
@@ -24,7 +24,6 @@ body {
   display: block;
   background-color: var(--dark);
   padding: 3% 4%;
- 
 }
 .tech {
   text-decoration: none;
@@ -35,7 +34,6 @@ body {
   display: inline-block;
   border-radius: var(--border-radius);
   box-shadow: 6px 5px var(--light-dark);
-
 }
 a {
   font-weight: 700;
@@ -43,46 +41,65 @@ a {
   line-height: 1.25;
 }
 
-header nav a {
+ header nav a {
   color: var(--primary);
   font-weight: lighter;
   padding: 15px 25px;
   text-decoration: none;
 }
 
-#logout {
+ #logout {
+align-content: flex-end;
   border: none;
   background: none;
   color: var(--primary);
   font-weight: lighter;
-  padding: 15px 15px;
-  font-family: "IBM Plex Sans", sans-serif;
-  font-size: 16px;
   text-decoration: none;
-}
+} 
+
 main {
   margin: 20px auto;
   width: 94%;
 }
-
-
-/* CARDS */
-/* .card {
-  margin: 0 0 20px 0;
-  border: 3px solid var(--dark);
+label {
+  font-size: 1.1rem;
+  margin: 0 0 0 5px;
+}
+button {
+  font-size: 1.3rem;
+  text-decoration: none;
+  padding: 6px 5px;
+  width: 100%;
+  display: block;
+  margin: 5px 10;
   border-radius: var(--border-radius);
-} */
+  color: var(--primary);
+  border: none;
+  outline: none;
+  background-color: var(--light-dark);
+  box-shadow: 3px 3px var(--dark);
+  transform: translate(-1px, -1px);
+}
+input {
+  /* align-items: center; */
+  width: 100%;
+  padding: 1%;
+  margin: 5px 0;
+  font-size: 1.2rem;
+  border: 2px solid var(--light-dark);
+}
 
-
-article,
-.login-form {
-  margin: 0 20px;
+form {
+text-align: center;
   border: 3px solid var(--dark);
 }
 
+.login-header, .singup-header{
+  color: var(--primary);
+  background-color: var(--dark);
+}
 .title,
-.meta,
-.login-header {
+.meta {
   flex-wrap: wrap;
   padding: 0.5%;
   color: var(--primary);

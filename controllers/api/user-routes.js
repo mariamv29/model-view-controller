@@ -70,7 +70,7 @@ router.post("/", (req, res) => {
 });
 
 router.post("/login", (req, res) => {
-  // expects {email: 'lernantino@gmail.com', password: 'password1234'}
+  // expects {'username', password: 'password1234'}
   User.findOne({
     where: {
       username: req.body.username,
@@ -98,9 +98,6 @@ router.post("/login", (req, res) => {
   });
 });
 
-// router.post("/signup", (req, res) => {
-//   User.create
-// })
 
 router.post("/logout", (req, res) => {
   if (req.session.loggedIn) {
