@@ -1,8 +1,8 @@
 
 const router = require('express').Router();
-const { Post, User, Comment} = require('../models');
+const { Post, User, Thought} = require('../models');
 
-// get all posts for homepage
+// render post to the homepage 
 router.get('/', (req, res) => {
   Post.findAll({
     attributes: [
@@ -13,8 +13,8 @@ router.get('/', (req, res) => {
     ],
     include: [
       {
-        model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        model: Thought,
+        attributes: ['id', 'thought_text', 'post_id', 'user_id', 'created_at'],
         include: {
           model: User,
           attributes: ['username']
@@ -40,7 +40,7 @@ router.get('/', (req, res) => {
     });
 });
 
-// get single post
+//get one post route
 router.get('/post/:id', (req, res) => {
     Post.findOne({
       where: {
@@ -53,8 +53,8 @@ router.get('/post/:id', (req, res) => {
         'created_at',      ],
       include: [
         {
-          model: Comment,
-          attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+          model: Thought,
+          attributes: ['id', 'thought_text', 'post_id', 'user_id', 'created_at'],
           include: {
             model: User,
             attributes: ['username']
@@ -72,10 +72,8 @@ router.get('/post/:id', (req, res) => {
           return;
         }
   
-        // serialize the data
         const post = dbPostData.get({ plain: true });
   
-        // pass data to template
         res.render('single-post', {
           post,
           loggedIn: req.session.loggedIn

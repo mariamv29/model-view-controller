@@ -11,25 +11,25 @@
     <div>
       {{post.vote_count}} {{format_plural "point" post.vote_count}} by you on {{format_date post.created_at}}
       |
-      <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+      <a href="/post/{{post.id}}">{{post.thoughts.length}} {{format_plural "thought" post.thoughts.length}}</a>
     </div>
     <button type="submit">Save post</button>
     <button type="button" class="delete-post-btn">Delete post</button>
   </form>
 </article>
 
-<form class="comment-form">
+<form class="thought-form">
   <div>
-    <textarea name="comment-body"></textarea>
+    <textarea name="thought-body"></textarea>
   </div>
 
   <div>
-    <button type="submit">add comment</button>
+    <button type="submit">add thought</button>
   </div>
 </form>
 
-{{> comments post.comments}}
+{{> thoughts post.thoughts}}
 
 <script src="/javascript/edit-post.js"></script>
 <script src="/javascript/delete-post.js"></script>
-<script src="/javascript/comment.js"></script>
+<script src="/javascript/thought.js"></script>

@@ -75,7 +75,7 @@ To use the
 1. Open the terminal 
 2. Run `npm start`
 3. Open browser http://localhost:3001
-4. Create an account, then you will be routed to the dashboard to create a new blog. If not, headover to the home page and all the blogs will be avail as well as other comments about the blog where you will be able to add, edit, remove any comments. 
+4. Create an account, then you will be routed to the dashboard to create a new blog. If not, headover to the home page and all the blogs will be avail as well as other thoughts about the blog where you will be able to add, edit, remove any thoughts. 
 
 
 ---

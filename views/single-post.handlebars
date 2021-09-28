@@ -2,19 +2,19 @@
 
 
 {{#if loggedIn}}
-<form class="comment-form">
+<form class="thought-form">
   <div>
-    <textarea name="comment-body"></textarea>
+    <textarea name="thought-body"></textarea>
   </div>
 
   <div>
-    <button type="submit">add comment</button>
+    <button type="submit">add thought</button>
   </div>
 </form>
 {{/if}}
 
-{{> comments post.comments}}
+{{> thoughts post.thoughts}}
 
 {{#if loggedIn}}
-<script src="/javascript/comment.js"></script>
+<script src="/javascript/thought.js"></script>
 {{/if}}

@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const withAuth = require("../../utils/auth");
-const { Post, User, Comment } = require("../../models");
+const { Post, User, Thought } = require("../../models");
 
 // get all posts
 router.get("/", (req, res) => {
@@ -8,10 +8,10 @@ router.get("/", (req, res) => {
     order: [["created_at", "DESC"]],
     attributes: ["id", "post_url", "title", "created_at"],
     include: [
-      // include the Comment model here:
+      // include the Thought model here:
       {
-        model: Comment,
-        attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
+        model: Thought,
+        attributes: ["id", "thought_text", "post_id", "user_id", "created_at"],
         include: {
           model: User,
           attributes: ["username"],
@@ -38,8 +38,8 @@ router.get("/:id", (req, res) => {
     attributes: ["id", "post_url", "title", "created_at"],
     include: [
       {
-        model: Comment,
-        attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
+        model: Thought,
+        attributes: ["id", "thought_text", "post_id", "user_id", "created_at"],
         include: {
           model: User,
           attributes: ["username"],
