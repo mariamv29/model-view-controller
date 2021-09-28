@@ -2,7 +2,7 @@ const router = require("express").Router();
 const withAuth = require("../../utils/auth");
 const { Post, User, Thought } = require("../../models");
 
-// get all posts
+
 router.get("/", (req, res) => {
   Post.findAll({
     order: [["created_at", "DESC"]],

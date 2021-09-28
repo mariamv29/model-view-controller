@@ -9,7 +9,7 @@
       <span>({{format_url post.post_url}})</span>
     </div>
     <div>
-      {{post.vote_count}} {{format_plural "point" post.vote_count}} by you on {{format_date post.created_at}}
+     Posted by you on {{format_date post.created_at}}
       |
       <a href="/post/{{post.id}}">{{post.thoughts.length}} {{format_plural "thought" post.thoughts.length}}</a>
     </div>
@@ -24,7 +24,7 @@
   </div>
 
   <div>
-    <button type="submit">add thought</button>
+    <button type="submit">Add thought</button>
   </div>
 </form>
 

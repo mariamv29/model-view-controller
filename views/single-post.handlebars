@@ -1,6 +1,5 @@
 {{> post-info post}}
 
-
 {{#if loggedIn}}
 <form class="thought-form">
   <div>
@@ -8,12 +7,12 @@
   </div>
 
   <div>
-    <button type="submit">add thought</button>
+    <button type="submit">Add thought</button>
   </div>
 </form>
 {{/if}}
+{{> thought_text post.thought_text}}
 
-{{> thoughts post.thoughts}}
 
 {{#if loggedIn}}
 <script src="/javascript/thought.js"></script>

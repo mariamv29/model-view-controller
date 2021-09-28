@@ -47,3 +47,5 @@ const postdata = [
 const seedPosts = () => Post.bulkCreate(postdata);
 
 module.exports = seedPosts
+
+// seeds generated with https://www.mockaroo.com/

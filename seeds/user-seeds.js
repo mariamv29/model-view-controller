@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection');
-const { User } = require("../models");
+const { User, Post } = require("../models");
 
 
 const userdata = [
@@ -38,6 +38,9 @@ const userdata = [
 ]
 
 
+const seedUsers = () => User.bulkCreate(userdata, {individualHooks: true});
+
+module.exports = seedUsers;
 
 
 
@@ -45,26 +48,6 @@ const userdata = [
 
 
 
-// grete	gandrock0@thetimes.co.uk
-// Farrel	fdunsmuir1@slideshare.net
-// Diego	dduffet2@constantcontact.com
-// Rorie	rburtenshaw3@amazon.co.jp
-// Gunther	gbeeckx4@ed.gov
-// Calhoun	cravenshaw5@businessweek.com
-// Stevie	sbamblett6@netvibes.com
-// Dmitri	dlewton7@networkadvertising.org
-// Kip	ktranckle8@163.com
-// Elva	ewelland9@noaa.gov
-// Johnath	jmatsella@dyndns.org
-// Kalli	kscardb@1und1.de
-// Emily	efairsc@hexun.com
-// Raphaela	rwattersond@forbes.com
-// Barr	bhurdwelle@4shared.com
-// Felecia	fmullenderf@google.de
-// Craig	cmaydwayg@digg.com
-// Ferd	fgimbretth@parallels.com
-// Douglas	dpagitti@icio.us
-// D'arcy	dvaughnj@nps.gov
-// Si	smattsonk@technorati.com
-// Nancey	nbaultl@hp.com
-// Farley	fdurnianm@reddit.com
+
+
+// seeds generated with https://www.mockaroo.com/
