@@ -26,3 +26,6 @@ const thoughtdata =[
         thought_text: "Totally agree",
     }
 ]
+const seedThoughts = () => Thought.bulkCreate(thoughtdata)
+
+module.exports = seedThoughts;
