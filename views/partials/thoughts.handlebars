@@ -1,15 +1,18 @@
 <div class="thoughts">
-    
+  <h3> Thoughts about this post</h3>
   {{#each this}}
-  <section class="thought">
-   
-    <div class="meta">
-    
-      {{user.username}} on {{format_date created_at}}
-    </div>
-    <div class="text">
-      {{thought_text}}
-    </div>
-  </section>
+    <section class="thought">
+
+      <div class="thought-text">
+        {{thought_text}}
+      </div>
+      <div class="meta">
+        Posted by
+        {{user.username}}
+        on
+        {{format_date created_at}}
+      </div>
+
+    </section>
   {{/each}}
 </div>

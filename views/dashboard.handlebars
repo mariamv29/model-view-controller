@@ -21,9 +21,11 @@
   <h2>Your Posts</h2>
   <ol>
     {{#each posts as |post|}}
-    <li class="list">
+    <li class="post">
       {{> post-info post}}
-      <a href="/dashboard/update/{{post.id}}" class="update-link">Update post</a>
+      <div>
+      <a href="/dashboard/update/{{post.id}}" class="link">Update post</a>
+      </div>
     </li>
     {{/each}}
   </ol>
