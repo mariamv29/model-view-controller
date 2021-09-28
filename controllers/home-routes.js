@@ -40,7 +40,6 @@ router.get('/', (req, res) => {
     });
 });
 
-//get one post route
 router.get('/post/:id', (req, res) => {
     Post.findOne({
       where: {
@@ -85,8 +84,6 @@ router.get('/post/:id', (req, res) => {
       });
   });
 
-
-//check for session and redirect to the homepage 
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
