@@ -1,4 +1,6 @@
 {{> post-info post}}
+ <h3>Thoughts for this post</h3>
+{{> thoughts post.thoughts}}
 
 {{#if loggedIn}}
 <form class="thought-form">
@@ -11,7 +13,7 @@
   </div>
 </form>
 {{/if}}
-{{> thoughts post.thoughts}}
+
 
 
 {{#if loggedIn}}

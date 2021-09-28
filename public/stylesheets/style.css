@@ -2,7 +2,7 @@
   --primary: #ccdad5;
   --tertiary: #788585;
   --light-dark: #6f6866;
-  --dark: #000000;
+  --dark: #2c2c2c;
   --border-radius: 0.3rem;
 }
 
@@ -49,7 +49,9 @@ header nav a {
   padding: 15px 25px;
   text-decoration: none;
 }
- 
+.list {
+  text-decoration: none;
+}
 #logout {
   align-content: flex-end;
   border: none;
@@ -77,9 +79,9 @@ main {
   width: 94%;
 }
 /*Home handlebars styling*/
-.post-list {
+/* .post-list {
 
-}
+} */
 
 button {
   background-color: var(--light-dark);
