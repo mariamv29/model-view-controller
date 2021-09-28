@@ -2,11 +2,9 @@ const router = require("express").Router();
 const { Post, User, Thought } = require("../models");
 const withAuth = require("../utils/auth");
 
-// get all posts for dashboard
 router.get("/", withAuth, (req, res) => {
   Post.findAll({
     where: {
-      // use the ID from the session
       user_id: req.session.user_id,
     },
     attributes: ["id", "post_url", "title", "created_at"],
@@ -35,7 +33,7 @@ router.get("/", withAuth, (req, res) => {
     });
 });
 
-router.get("/edit/:id", withAuth, (req, res) => {
+router.get("/update/:id", withAuth, (req, res) => {
   Post.findByPk(req.params.id, {
     attributes: ["id", "post_url", "title", "created_at"],
     include: [
@@ -57,7 +55,7 @@ router.get("/edit/:id", withAuth, (req, res) => {
       if (dbPostData) {
         const post = dbPostData.get({ plain: true });
 
-        res.render("edit-post", {
+        res.render("update-post", {
           post,
           loggedIn: true,
         });

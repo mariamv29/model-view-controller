@@ -13,7 +13,6 @@ router.get("/", (req, res) => {
 
 //create new post /api/Thoughts
 router.post('/', withAuth, (req, res) => {
-  // check the session
   if (req.session) {
     Thought.create({
       thought_text: req.body.thought_text,

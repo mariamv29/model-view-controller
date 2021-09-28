@@ -24,7 +24,6 @@ router.get("/:id", (req, res) => {
         model: Post,
         attributes: ["id", "title", "post_url", "created_at"],
       },
-      // include the Thought model here:
       {
         model: Thought,
         attributes: ["id", "thought_text", "created_at"],
