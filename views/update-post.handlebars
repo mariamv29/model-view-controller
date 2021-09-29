@@ -16,7 +16,7 @@
     <button type="button" class="delete-post-btn">Delete post</button>
   </form>
 </article>
-
+{{> thoughts post.thoughts}}
 <form class="thought-form">
   <div>
     <textarea name="thought-body"></textarea>
@@ -27,7 +27,7 @@
   </div>
 </form>
 
-{{> thoughts post.thoughts}}
+
 
 <script src="/javascript/update-post.js"></script>
 <script src="/javascript/delete-post.js"></script>

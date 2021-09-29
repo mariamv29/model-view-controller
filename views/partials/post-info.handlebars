@@ -1,15 +1,21 @@
 <article class="posts">
   <div class="title">
     <a href="/post/{{id}}" target="_blank">{{title}}</a>
+    <a href="/post/{{id}}" {{posts.thoughts.thought_text}}></a>  
     <span class="meta">
 
       Posted by
-
+      {{#each thoughts}}
+      {{thought_text}}
+{{/each}}
       {{user.username}}
       on
       {{format_date created_at}}
+       <a href="{{post_url}}" id="website" target="_blank">Website</a>
     </span>
+    
   </div>
+
 
 
 </article>

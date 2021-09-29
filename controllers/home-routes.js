@@ -20,7 +20,7 @@ router.get("/", (req, res) => {
       },
       {
         model: User,
-        attributes: ['username']
+        attributes: ["username"],
       }
     ]
   })
@@ -81,6 +81,24 @@ router.get('/post/:id', (req, res) => {
         res.status(500).json(err);
       });
   });
+
+  router.get("/", (req, res) => {
+    Thought.findAll({
+      where: {
+      thought_text: req.params.thought_text
+      }
+    })
+    .then(dbThoughtData => { 
+      const thought = dbThoughtData.get({ plain: true})
+
+      res.render('homepage', {thought})
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+  });
+});
+
 
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {

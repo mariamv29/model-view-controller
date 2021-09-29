@@ -1,13 +1,13 @@
 <div class="thoughts">
-  <h3> Thoughts about this post</h3>
   {{#each this}}
     <section class="thought">
 
       <div class="thought-text">
         {{thought_text}}
+        {{id}}
       </div>
       <div class="meta">
-        Posted by
+        Created by
         {{user.username}}
         on
         {{format_date created_at}}

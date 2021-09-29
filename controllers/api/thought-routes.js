@@ -3,7 +3,8 @@ const withAuth = require("../../utils/auth");
 const { Thought } = require("../../models");
 
 router.get("/", (req, res) => {
-  Thought.findAll()
+  Thought.findAll({
+  })
   .then(dbThoughtData => res.json(dbThoughtData))
   .catch(err => {
     console.log(err);
@@ -11,7 +12,6 @@ router.get("/", (req, res) => {
   });
 });
 
-//create new post /api/Thoughts
 router.post('/', withAuth, (req, res) => {
   if (req.session) {
     Thought.create({
