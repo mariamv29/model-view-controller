@@ -7,7 +7,7 @@ Model-View-Controller is a full-stack web application where develops can utilize
 ![screenshot](./assets/localhost3001.jpg)
 
 ## Heroku Link 
-(https://model-view.herokuapp.com/)
+[Heroku Link](https://model-view.herokuapp.com/)
 
 ## User Story 
 AS A developer who writes about tech
