@@ -36,7 +36,7 @@ h4{
 
 h2,
 h3 {
-  font-size: 20px;
+  font-size: 25px;
   text-align: center;
   margin-top: 3vw;
 }
@@ -61,23 +61,31 @@ header nav a,
 }
 
 .title {
+  text-decoration: none;
   padding: 10px 10px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  background-color: var(--dark);
 }
 
 .title a {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
-  color: var(--dark);
+  color: var(--primary);
+  text-decoration: none;
 }
 
 .meta, #website {
-  font-size: 12px;
+  padding: 6px 6px;
+  font-size: 14px;
   justify-content: flex-end;
+  color: var(--primary);
 }
-
+.each-thought {
+  padding: 10px 10px;
+  font-size: 20px;
+}
 .posts {
   margin: 15px 10px 20px 15px;
   border-style: solid;
@@ -97,8 +105,8 @@ button {
 }
 
 .link {
-  margin-left: 43.5vw;
-  padding: 5px 20px;
+  margin-left: 1vw;
+  padding: 5px 18px;
   text-decoration: none;
   font-size: 1rem;
   border-radius: var(--border-radius);
@@ -106,12 +114,7 @@ button {
   background-color: var(--light-dark);
   box-shadow: 3px 3px var(--dark);
 }
-.thought-link {
-  padding: 5px 10px;
-  text-decoration: none;
-  font-size: 1rem;
-  color: var(--dark);
-}
+
 .dash-link {
   margin: 0 0 0 20px;
   text-decoration: none;
@@ -139,6 +142,17 @@ form {
   border-style: solid;
   border-width: 8px;
   padding: 10px;
+  display: block;
+  block-size: fit-content;
+}
+
+.dash {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 2vw;
+  width: 60%;
+  margin-left: 20vw;
+  height: 30vh;
   display: block;
   block-size: fit-content;
 }

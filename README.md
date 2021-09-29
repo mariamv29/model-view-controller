@@ -4,7 +4,7 @@
 Model-View-Controller is a full-stack web application where develops can utilize to post their blogs and review other blogs. By creating an account, the user will be have access to create a thought on other blogs.
 
 ## Screenshot 
-![screenshot](./assets/screenshot.jpg)
+![screenshot](./assets/localhost3001.jpg)
 
 ## User Story 
 AS A developer who writes about tech

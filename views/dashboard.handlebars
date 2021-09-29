@@ -1,23 +1,5 @@
-
-
-{{#if posts.length}}
 <section>
-  <h2>Your Posts</h2>
-  <ol>
-    {{#each posts as |post|}}
-    <li class="post">
-      {{> post-info post}}
-      <div>
-      <a href="/dashboard/update/{{post.id}}" class="link">Update post</a>
-      </div>
-    </li>
-    {{/each}}
-  </ol>
-</section>
- {{/if}} 
- 
-<section>
-  <h2>Create New Post</h2>
+  <h2>Add New Post</h2>
 
   <form class="new-post-form">
     <div>
@@ -32,5 +14,23 @@
   </form>
   
 </section>
+
+{{#if posts.length}}
+<section>
+  <h2>Your Posts</h2>
+  <ol>
+    {{#each posts as |post|}}
+    <li class="dash">
+      {{> post-info post}}
+      <div>
+      <a href="/dashboard/update/{{post.id}}" class="link">Update post</a>
+      </div>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+ {{/if}} 
+
+
 
 <script src="/javascript/add-post.js"></script>
