@@ -1,7 +1,7 @@
 # model-view-controller
 
 ## Description 
-Model-View-Controller is a full-stack web application where develops can utilize to post their blogs and review other blogs. By creating an account, the user will be have access to create a thought on other blogs.
+Model-View-Controller is a CMS-style blog application where develops can utilize to post their blogs and review other blogs. The app allows a user to an account, the user will be have access to create a thought on other blogs. Model-View-Controller follows the MVC paradigm while also using Handlerbars.js and Sequelize. This application is deployed to Heroku
 
 ## Screenshot 
 ![screenshot](./assets/localhost3001.jpg)
